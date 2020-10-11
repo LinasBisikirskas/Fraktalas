@@ -1,0 +1,97 @@
+
+<html><head>
+    <h2>Kompiuterinė grafika labaratorinis darbas nr. 1  </h2>
+    <h2>Linas Bisikirskas Informatika 3 kursas 3 grupė 1811756</h2>
+   
+</head><body onload="draw();">
+    <div>Pasirinkite transformacijos žingsnį</div>
+    <input type="range" min="0" max="6" value="0" step="1" onchange="showValue(this.value)">
+    <div id="range">0</div>
+<script type="text/javascript">
+function showValue(newValue)
+{
+   document.getElementById("range").innerHTML=newValue;
+   draw(newValue);
+}
+</script>
+ <script type="application/javascript">	
+   function draw(step) {
+     var canvas = document.getElementById('canvas');
+     if (canvas.getContext) {
+         
+       var ctx = canvas.getContext("2d");
+
+       canvas.width = canvas.width;
+       ctx.fillStyle= ("Blue");
+
+      var colorID = step - 1;
+     drawF(step);
+     }
+       function drawF(step) {
+         if (step > 0) {
+         step = step-1; 
+         ctx.save();
+         ctx.save();
+         ctx.save();
+         
+         if(step == colorID){
+           ctx.fillStyle = "RED";
+         }
+         ctx.transform(-0.5, 0, 0, 0.5, 250, 0); 
+         drawF(step); 
+         ctx.restore();
+
+         if (step == colorID ) {
+           ctx.fillStyle = "#005500";
+         };
+         ctx.transform(0.5, 0, 0, 0.5, 250, 0); 
+         drawF(step); 
+         ctx.restore();
+
+         if(step == colorID){
+           ctx.fillStyle = "#0000AA";
+         }
+         ctx.transform(0, -0.5,  -0.5,0, 500, 500);  
+         drawF(step);
+         ctx.restore();
+
+         if(step == colorID){
+           ctx.fillStyle = "#00AA00";
+         }
+         ctx.transform(-0.25, 0, 0, -0.25, 125, 375);  
+         drawF(step);
+         }
+         else drawT();    
+       }      
+
+       function drawT() {
+
+
+        ctx.beginPath();
+        ctx.moveTo(500,0);
+        ctx.lineTo(500,500);
+        ctx.lineTo(0,500);
+        ctx.lineTo(0,400);
+        ctx.lineTo(400,400);
+        ctx.lineTo(400,0);
+        ctx.fill();
+
+        // ctx.beginPath();
+        // ctx.moveTo(0,0);
+        // ctx.lineTo(500,0);
+        // ctx.lineTo(500,500);
+        // ctx.lineTo(250,500);
+        // ctx.lineTo(250,250);
+        // ctx.lineTo(125,250);
+        // ctx.lineTo(125,375);
+        // ctx.lineTo(0,375);
+        // ctx.fill();
+
+       }       
+   }
+ </script>
+
+
+  <canvas id="canvas" style="border:2px solid #000000;" width="500" height="500"></canvas>
+
+</body></html>
