@@ -1,11 +1,11 @@
 
 <html><head>
     <h2>Kompiuterinė grafika labaratorinis darbas nr. 1  </h2>
-    <h2>Linas Bisikirskas Informatika 3 kursas 3 grupė 1811756</h2>
+    <h2>Linas Bisikirskas Informatika 3 kursas 3 grupė </h2>
    
 </head><body onload="draw();">
     <div>Pasirinkite transformacijos žingsnį</div>
-    <input type="range" min="0" max="6" value="0" step="1" onchange="showValue(this.value)">
+    <input type="range" min="0" max="9" value="0" step="1" onchange="showValue(this.value)">
     <div id="range">0</div>
 <script type="text/javascript">
 function showValue(newValue)
@@ -71,9 +71,9 @@ function showValue(newValue)
         ctx.moveTo(500,0);
         ctx.lineTo(500,500);
         ctx.lineTo(0,500);
-        ctx.lineTo(0,400);
-        ctx.lineTo(400,400);
-        ctx.lineTo(400,0);
+        ctx.lineTo(0,450);
+        ctx.lineTo(350,450);
+        ctx.lineTo(350,0);
         ctx.fill();
 
         // ctx.beginPath();
